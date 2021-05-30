@@ -16,13 +16,13 @@ public class CMonstruo implements IPersonaje {
     private double peso;
     private double altura;
     private double inteligencia;
-    private double habilidades;
+    private String habilidades;
 
     public CMonstruo() {
     }
 
-    public CMonstruo(String nombre, String img, double peso, double altura, double inteligencia, double habilidades) {
-        this.nombre = nombre;
+    public CMonstruo(String nombre, String img, double peso, double altura, double inteligencia, String habilidades) {
+        this.nombre = "Monstruo \""+nombre+"\"";
         this.img = img;
         this.peso = peso;
         this.altura = altura;
@@ -35,4 +35,58 @@ public class CMonstruo implements IPersonaje {
         CHeroe heroe = new CHeroe(nombre, img, peso, altura, inteligencia, habilidades);
         return heroe;
     }
+
+    @Override
+    public String toString() {
+        return "CMonstruo{" + "nombre=" + nombre + ", img=" + img + ", peso=" + peso + ", altura=" + altura + ", inteligencia=" + inteligencia + ", habilidades=" + habilidades + '}';
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = "Monstruo \""+nombre+"\"";
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
+    }
+
+    public double getPeso() {
+        return peso;
+    }
+
+    public void setPeso(double peso) {
+        this.peso = peso;
+    }
+
+    public double getAltura() {
+        return altura;
+    }
+
+    public void setAltura(double altura) {
+        this.altura = altura;
+    }
+
+    public double getInteligencia() {
+        return inteligencia;
+    }
+
+    public void setInteligencia(double inteligencia) {
+        this.inteligencia = inteligencia;
+    }
+
+    public String getHabilidades() {
+        return habilidades;
+    }
+
+    public void setHabilidades(String habilidades) {
+        this.habilidades = habilidades;
+    }
+    
 }

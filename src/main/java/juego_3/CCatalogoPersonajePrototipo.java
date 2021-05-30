@@ -22,4 +22,9 @@ public class CCatalogoPersonajePrototipo {
     public Object getPersonaje(String key){
         return catalogo.get(key);
     }
+
+    public Hashtable<String, IPersonaje> getCatalogo() {
+        return catalogo;
+    }
+    
 }

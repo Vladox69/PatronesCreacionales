@@ -18,13 +18,13 @@ public class CHeroe implements IPersonaje {
     private double peso;
     private double altura;
     private double inteligencia;
-    private double habilidades;
+    private String habilidades;
 
     public CHeroe() {
     }
 
-    public CHeroe(String nombre, String img, double peso, double altura, double inteligencia, double habilidades) {
-        this.nombre = nombre;
+    public CHeroe(String nombre, String img, double peso, double altura, double inteligencia, String habilidades) {
+        this.nombre = "Heroe \""+nombre+"\"";
         this.img = img;
         this.peso = peso;
         this.altura = altura;
@@ -48,7 +48,7 @@ public class CHeroe implements IPersonaje {
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        this.nombre = "Heroe \""+nombre+"\"";
     }
 
     public String getImg() {
@@ -83,11 +83,11 @@ public class CHeroe implements IPersonaje {
         this.inteligencia = inteligencia;
     }
 
-    public double getHabilidades() {
+    public String getHabilidades() {
         return habilidades;
     }
 
-    public void setHabilidades(double habilidades) {
+    public void setHabilidades(String habilidades) {
         this.habilidades = habilidades;
     }
 
