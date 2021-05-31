@@ -5,6 +5,9 @@
  */
 package reloj;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 /**
  *
  * @author ASUS
@@ -16,12 +19,16 @@ public class DemoSingleton {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Hora hora=Hora.getInstance();
-        Hora hora2=Hora.getInstance();
-        Hora hora3=Hora.getInstance();
-        System.out.println(hora);
-        System.out.println(hora2);
-        System.out.println(hora3);
+        Hora hora = Hora.getInstance();
+        Timer t = new Timer();
+        t.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                hora.setTime(System.currentTimeMillis());
+                System.out.println(hora);
+            }
+        }, 0, 1000);
+        
     }
-    
+
 }

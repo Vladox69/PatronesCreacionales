@@ -15,10 +15,10 @@ import java.util.Hashtable;
 public class CCatalogoPersonajePrototipo {
 
     ArrayList[] vector = new ArrayList[4];
-    ArrayList<IPersonaje> lheroe = new ArrayList<IPersonaje>();
-    ArrayList<IPersonaje> lmonstruo = new ArrayList<IPersonaje>();
+    ArrayList<IPersonaje> lheroe = new ArrayList<>();
+    ArrayList<IPersonaje> lmonstruo = new ArrayList<>();
     ArrayList<IPersonaje> lprincipe = new ArrayList<>();
-    ArrayList<IPersonaje> lvillano = new ArrayList<IPersonaje>();
+    ArrayList<IPersonaje> lvillano = new ArrayList<>();
 
     public CCatalogoPersonajePrototipo() {
         CHeroe heroe = new CHeroe("Martin", "img1.png", 98.5, 178.1, 9, "Doble salto");
@@ -44,10 +44,6 @@ public class CCatalogoPersonajePrototipo {
         return super.equals(obj); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
-    protected Object clone() throws CloneNotSupportedException {
-        return super.clone(); //To change body of generated methods, choose Tools | Templates.
-    }
 
     private final Hashtable<String, IPersonaje> catalogo = new Hashtable<String, IPersonaje>();
 
@@ -56,7 +52,7 @@ public class CCatalogoPersonajePrototipo {
     }
 
     public Object getPersonaje(String key) {
-        return catalogo.get(key);
+        return catalogo.get(key).clonar();
     }
     public ArrayList[] getVector(){
         return vector;

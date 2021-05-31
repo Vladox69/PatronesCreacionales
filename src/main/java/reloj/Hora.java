@@ -14,6 +14,8 @@ import java.util.Date;
 public class Hora extends Date{
     
     private static Hora hora;
+
+   
     
     private Hora(long currentTimeMillis){
         
@@ -26,5 +28,8 @@ public class Hora extends Date{
         return hora;
     }
     
+     public static void setHora(Hora ahora) {
+        hora = ahora;
+    }
 }
 

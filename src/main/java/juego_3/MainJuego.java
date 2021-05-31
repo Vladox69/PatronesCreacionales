@@ -18,12 +18,13 @@ public class MainJuego {
         Scanner t = new Scanner(System.in);
         int op;
         CCatalogoPersonajePrototipo catalogoPersonajes = new CCatalogoPersonajePrototipo();
-        ArrayList[] h = catalogoPersonajes.getVector();
-        for (ArrayList h1 : h) {
-            for (int j = 0; j < h1.size(); j++) {
-                System.out.println(h1.get(j).toString());
+        ArrayList[] cp = catalogoPersonajes.getVector();
+        for (ArrayList cpi : cp) {
+            for (int j = 0; j < cpi.size(); j++) {
+                System.out.println(cpi.get(j).toString());
             }
         }
+
         do {
             System.out.println("---- Catalogo personajes ---");
             System.out.println("1. Crear personaje");
@@ -40,7 +41,7 @@ public class MainJuego {
                     if (catalogoPersonajes.getCatalogo().isEmpty()) {
                         System.out.println("Error: Opciones permitidas solo de 1 y 3.\n");
                     } else {
-                        mostrarPersonaje(catalogoPersonajes);
+                        seleccionarPersonaje(catalogoPersonajes);
                     }
                     break;
                 case 3:
@@ -189,7 +190,7 @@ public class MainJuego {
         return null;
     }
 
-    private static void mostrarPersonaje(CCatalogoPersonajePrototipo catalogoPersonajes) {
+    private static void seleccionarPersonaje(CCatalogoPersonajePrototipo catalogoPersonajes) {
         if (catalogoPersonajes.getCatalogo().containsKey("Heroe")) {
             System.out.println(catalogoPersonajes.getPersonaje("Heroe"));
         }

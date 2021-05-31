@@ -22,7 +22,7 @@ public class CVillano implements IPersonaje {
     }
 
     public CVillano(String nombre, String img, double peso, double altura, double inteligencia, String habilidades) {
-        this.nombre = "Principe \"" + nombre + "\"";
+        this.nombre = "Villano \"" + nombre + "\"";
         this.img = img;
         this.peso = peso;
         this.altura = altura;
