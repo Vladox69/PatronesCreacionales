@@ -40,7 +40,7 @@ public class CHeroe implements IPersonaje {
 
     @Override
     public String toString() {
-        return "CHeroe{" + "nombre=" + nombre + ", img=" + img + ", peso=" + peso + ", altura=" + altura + ", inteligencia=" + inteligencia + ", habilidades=" + habilidades + '}';
+        return "CHeroe{ nombre= " + nombre + ", img= " + img + ", peso= " + peso + ", altura= " + altura + ", inteligencia= " + inteligencia + ", habilidades= " + habilidades + " }";
     }
 
     public String getNombre() {

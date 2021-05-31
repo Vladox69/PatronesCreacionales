@@ -38,7 +38,7 @@ public class CPrincipe implements IPersonaje {
 
     @Override
     public String toString() {
-        return "CPrincipe{" + "nombre=" + nombre + ", img=" + img + ", peso=" + peso + ", altura=" + altura + ", inteligencia=" + inteligencia + ", habilidades=" + habilidades + '}';
+        return "CPrincipe{ nombre= " + nombre + ", img= " + img + ", peso= " + peso + ", altura= " + altura + ", inteligencia= " + inteligencia + ", habilidades= " + habilidades + " }";
     }
 
     public String getNombre() {

@@ -5,6 +5,7 @@
  */
 package juego_3;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -17,7 +18,12 @@ public class MainJuego {
         Scanner t = new Scanner(System.in);
         int op;
         CCatalogoPersonajePrototipo catalogoPersonajes = new CCatalogoPersonajePrototipo();
-
+        ArrayList[] h = catalogoPersonajes.getVector();
+        for (ArrayList h1 : h) {
+            for (int j = 0; j < h1.size(); j++) {
+                System.out.println(h1.get(j).toString());
+            }
+        }
         do {
             System.out.println("---- Catalogo personajes ---");
             System.out.println("1. Crear personaje");
@@ -38,7 +44,8 @@ public class MainJuego {
                     }
                     break;
                 case 3:
-                    System.out.println("Saliendo...");
+
+                    //System.out.println("Saliendo...");
                     break;
                 default:
                     if (catalogoPersonajes.getCatalogo().isEmpty()) {
@@ -70,7 +77,7 @@ public class MainJuego {
                 case 3:
                     crearMonstruo(catalogoPersonajes);
                     break;
-                    case 4:
+                case 4:
                     crearVillano(catalogoPersonajes);
                     break;
                 case 5:
@@ -140,6 +147,7 @@ public class MainJuego {
         //t.next();
         return 5;
     }
+
     private static int crearVillano(CCatalogoPersonajePrototipo catalogoPersonajes) {
         Scanner t = new Scanner(System.in);
         System.out.println("\nNombre:");
@@ -193,5 +201,4 @@ public class MainJuego {
         }
     }
 
-    
 }

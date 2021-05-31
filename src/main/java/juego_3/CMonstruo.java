@@ -38,7 +38,7 @@ public class CMonstruo implements IPersonaje {
 
     @Override
     public String toString() {
-        return "CMonstruo{" + "nombre=" + nombre + ", img=" + img + ", peso=" + peso + ", altura=" + altura + ", inteligencia=" + inteligencia + ", habilidades=" + habilidades + '}';
+        return "CMonstruo{ nombre= " + nombre + ", img= " + img + ", peso= " + peso + ", altura= " + altura + ", inteligencia= " + inteligencia + ", habilidades= " + habilidades + " }";
     }
 
     public String getNombre() {

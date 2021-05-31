@@ -38,7 +38,7 @@ public class CVillano implements IPersonaje {
 
     @Override
     public String toString() {
-        return "CVillano{" + "nombre=" + nombre + ", img=" + img + ", peso=" + peso + ", altura=" + altura + ", inteligencia=" + inteligencia + ", habilidades=" + habilidades + '}';
+        return "CVillano{ nombre= " + nombre + ", img= " + img + ", peso= " + peso + ", altura= " + altura + ", inteligencia= " + inteligencia + ", habilidades= " + habilidades + " }";
     }
 
     public String getNombre() {
