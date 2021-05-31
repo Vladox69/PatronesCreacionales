@@ -57,7 +57,7 @@ public class MainJuego {
         int op;
         do {
             System.out.println("---- Creacion de personajes ---");
-            System.out.println("1. Crear Heroe\n2. Crear Principe\n3. Crear Monstruo\n4. Regresar");
+            System.out.println("1. Crear Heroe\n2. Crear Principe\n3. Crear Monstruo\n4. Crear Villano\n5. Regresar");
 
             op = t.nextInt();
             switch (op) {
@@ -70,13 +70,15 @@ public class MainJuego {
                 case 3:
                     crearMonstruo(catalogoPersonajes);
                     break;
-                case 4:
+                    case 4:
+                    crearVillano(catalogoPersonajes);
+                    break;
+                case 5:
                     System.out.println("Regresando...");
                     break;
                 default:
-
             }
-        } while (op != 4);
+        } while (op != 5);
     }
 
     static int crearHeroe(CCatalogoPersonajePrototipo catalogoPersonajes) {
@@ -96,7 +98,7 @@ public class MainJuego {
         catalogoPersonajes.addPersonaje("Heroe", heroe);
         System.out.println("Heroe creado");
         //t.next();
-        return 4;
+        return 5;
     }
 
     public static int crearPrincipe(CCatalogoPersonajePrototipo catalogoPersonajes) {
@@ -116,7 +118,7 @@ public class MainJuego {
         catalogoPersonajes.addPersonaje("Principe", principe);
         System.out.println("Principe creado");
         //t.next();
-        return 4;
+        return 5;
     }
 
     public static int crearMonstruo(CCatalogoPersonajePrototipo catalogoPersonajes) {
@@ -136,7 +138,26 @@ public class MainJuego {
         catalogoPersonajes.addPersonaje("Monstruo", monstruo);
         System.out.println("Monstruo creado");
         //t.next();
-        return 4;
+        return 5;
+    }
+    private static int crearVillano(CCatalogoPersonajePrototipo catalogoPersonajes) {
+        Scanner t = new Scanner(System.in);
+        System.out.println("\nNombre:");
+        String nombre = t.nextLine();
+        System.out.println("Nombre imagen:");
+        String img = t.nextLine();
+        System.out.println("Peso (kg):");
+        double peso = Double.parseDouble(t.nextLine());
+        System.out.println("Altura (cm):");
+        double altura = Double.parseDouble(t.nextLine());
+        System.out.println("Inteligencia (1-10):");
+        double inteligencia = Double.parseDouble(t.nextLine());
+        String habilidad = elegirHabilidad();
+        CVillano monstruo = new CVillano(nombre, img, peso, altura, inteligencia, habilidad);
+        catalogoPersonajes.addPersonaje("Villano", monstruo);
+        System.out.println("Monstruo creado");
+        //t.next();
+        return 5;
     }
 
     public static String elegirHabilidad() {
@@ -171,4 +192,6 @@ public class MainJuego {
             System.out.println(catalogoPersonajes.getPersonaje("Monstruo"));
         }
     }
+
+    
 }
