@@ -110,7 +110,6 @@ public class MainJuego {
         double inteligencia = Double.parseDouble(t.nextLine());
         String habilidad = elegirHabilidad();
         CHeroe heroe = new CHeroe(nombre, img, peso, altura, inteligencia, habilidad);
-        heroe.clonar();
         lh.add(heroe);
         System.out.println("Heroe creado");
         //t.next();
