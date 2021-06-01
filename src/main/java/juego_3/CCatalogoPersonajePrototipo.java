@@ -52,6 +52,8 @@ public class CCatalogoPersonajePrototipo {
     }
 
     public Object getPersonaje(String key) {
+        CHeroe heroe;
+        ((CHeroe)vector[0].get(0)).clonar();
         return catalogo.get(key).clonar();
     }
     public ArrayList[] getVector(){
