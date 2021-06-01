@@ -11,9 +11,23 @@ package banco;
  */
 public class TrajetaCredito10 implements ITarjetaCredito{
 
+    private String costo;
+
+    public String getCosto() {
+        return costo;
+    }
+
+    public void setGratuidad(String gratuidad) {
+        this.costo = gratuidad;
+    }
+    
+    public TrajetaCredito10(){
+        this.costo="18 euros \n"+ "60% nómina";
+    }
+    
     @Override
     public String getDatosTarjetaCredito() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return "Tarjeta de crédito: \n"+getCosto()+"\n";
     }
     
 }

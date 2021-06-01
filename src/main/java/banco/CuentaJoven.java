@@ -12,6 +12,19 @@ package banco;
 public class CuentaJoven implements ICuenta{
     private TarjetaDebitoJoven tarjeta;
     private RegaloJoven regalo;
+    private String interes;
+
+    public String getInteres() {
+        return interes;
+    }
+
+    public void setInteres(String interes) {
+        this.interes = interes;
+    }
+    
+    public CuentaJoven(){
+        this.interes="Interés: 2% \n";
+    }
     
     @Override
     public void crear() {
@@ -21,7 +34,10 @@ public class CuentaJoven implements ICuenta{
 
     @Override
     public String datosCuenta() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return "Datos de cuenta joven:\n"
+                +getInteres()
+                +tarjeta.getDatosTarjetaDebito()
+                +regalo.getDatosRegalo();
     }
     
 }

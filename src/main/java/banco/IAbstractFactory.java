@@ -10,7 +10,6 @@ package banco;
  * @author ASUS
  */
 public interface IAbstractFactory {
-    void crearProductos(String tipo);
-    ICuenta crearCuenta();
+    ICuenta crearCuenta(String tipo);
 
 }

@@ -11,10 +11,10 @@ package banco;
  */
 public class FabricaCuentas implements IAbstractFactory{
     ICuenta cuenta;
-    
+
     @Override
-    public void crearProductos(String tipo) {
-        if(tipo.equals("JOVEN")){
+    public ICuenta crearCuenta(String tipo) {
+         if(tipo.equals("JOVEN")){
             cuenta=new CuentaJoven();
             cuenta.crear();
         }else if(tipo.equals("10")){
@@ -27,10 +27,6 @@ public class FabricaCuentas implements IAbstractFactory{
             cuenta=new CuentaEstandar();
             cuenta.crear();
         }
-    }
-
-    @Override
-    public ICuenta crearCuenta() {
         return cuenta;
     }
 

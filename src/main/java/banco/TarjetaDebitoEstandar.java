@@ -11,9 +11,23 @@ package banco;
  */
 public class TarjetaDebitoEstandar implements ITarjetaDebito{
 
+    private String costo;
+
+    public String getCosto() {
+        return costo;
+    }
+
+    public void setCosto(String costo) {
+        this.costo = costo;
+    }
+    
+    public TarjetaDebitoEstandar(){
+        this.costo="5 euros";
+    }
+    
     @Override
     public String getDatosTarjetaDebito() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return "Tarjeta de débito:"+getCosto()+"\n";
     }
     
 }

@@ -11,20 +11,38 @@ package banco;
  */
 public class Cuenta10 implements ICuenta {
 
+    public Cuenta10() {
+        this.interes ="Interés:"+"\n"+ "1% de interés" 
+                + "\n" + "50% descubierto" + "\n";
+    }
+
+    public String getInteres() {
+        return interes;
+    }
+
+    public void setInteres(String interes) {
+        this.interes = interes;
+    }
+
+    private String interes;
     private TarjetaDebito10 tarjetaDebito;
     private TrajetaCredito10 tarjetaCredito;
     private Regalo10 regalo;
 
     @Override
     public void crear() {
-        tarjetaCredito =new TrajetaCredito10();
-        tarjetaDebito =new TarjetaDebito10();
-        regalo=new Regalo10();
+        tarjetaCredito = new TrajetaCredito10();
+        tarjetaDebito = new TarjetaDebito10();
+        regalo = new Regalo10();
     }
 
     @Override
     public String datosCuenta() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return "Datos cuenta 10 \n"+
+                getInteres()
+                + tarjetaCredito.getDatosTarjetaCredito()
+                + tarjetaDebito.getDatosTarjetaDebito()
+                + regalo.getDatosRegalo();
     }
 
 }

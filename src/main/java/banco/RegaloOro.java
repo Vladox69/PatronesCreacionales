@@ -11,9 +11,23 @@ package banco;
  */
 public class RegaloOro implements IRegalo {
 
+    private String regalo;
+
+    public String getRegalo() {
+        return regalo;
+    }
+
+    public void setRegalo(String regalo) {
+        this.regalo = regalo;
+    }
+    
+    public RegaloOro(){
+        this.regalo="Seguro \n";
+    }
+    
     @Override
     public String getDatosRegalo() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return "Regalo:"+getRegalo();
     }
     
 }
