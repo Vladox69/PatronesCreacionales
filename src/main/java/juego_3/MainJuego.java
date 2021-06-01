@@ -18,8 +18,8 @@ public class MainJuego {
         Scanner t = new Scanner(System.in);
         int op;
         CCatalogoPersonajePrototipo catalogoPersonajes = new CCatalogoPersonajePrototipo();
-        ArrayList[] cp = catalogoPersonajes.getVector();
-        for (ArrayList cpi : cp) {
+        ArrayList[] vp = catalogoPersonajes.getVector();
+        for (ArrayList cpi : vp) {
             for (int j = 0; j < cpi.size(); j++) {
                 System.out.println(cpi.get(j).toString());
             }
@@ -27,146 +27,23 @@ public class MainJuego {
 
         do {
             System.out.println("---- Catalogo personajes ---");
-            System.out.println("1. Crear personaje");
-            if (!catalogoPersonajes.getCatalogo().isEmpty()) {
-                System.out.println("2. Seleccion de personaje");
-            }
-            System.out.println("3. Salir\n");
+            System.out.println("1. Crear personaje\n2. Seleccion de personaje\n3. Salir\n");
             op = t.nextInt();
             switch (op) {
                 case 1:
-                    crearPersonaje(catalogoPersonajes);
+                    crearPersonajes(vp);
                     break;
                 case 2:
-                    if (catalogoPersonajes.getCatalogo().isEmpty()) {
-                        System.out.println("Error: Opciones permitidas solo de 1 y 3.\n");
-                    } else {
-                        seleccionarPersonaje(catalogoPersonajes);
-                    }
+                    seleccionarPersonajes(vp);
                     break;
                 case 3:
-
-                    //System.out.println("Saliendo...");
+                    System.out.println("Saliendo...");
                     break;
                 default:
-                    if (catalogoPersonajes.getCatalogo().isEmpty()) {
-                        System.out.println("Error: Opciones permitidas solo de 1 y 3.\n");
-                    } else {
-                        System.out.println("Error: Opciones permitidas solo de 1 a 3.\n");
-                    }
-
+                    System.out.println("Error: Opciones permitidas solo de 1 a 3.\n");
             }
         } while (op != 3);
 
-    }
-
-    public static void crearPersonaje(CCatalogoPersonajePrototipo catalogoPersonajes) {
-        Scanner t = new Scanner(System.in);
-        int op;
-        do {
-            System.out.println("---- Creacion de personajes ---");
-            System.out.println("1. Crear Heroe\n2. Crear Principe\n3. Crear Monstruo\n4. Crear Villano\n5. Regresar");
-
-            op = t.nextInt();
-            switch (op) {
-                case 1:
-                    op = crearHeroe(catalogoPersonajes);
-                    break;
-                case 2:
-                    crearPrincipe(catalogoPersonajes);
-                    break;
-                case 3:
-                    crearMonstruo(catalogoPersonajes);
-                    break;
-                case 4:
-                    crearVillano(catalogoPersonajes);
-                    break;
-                case 5:
-                    System.out.println("Regresando...");
-                    break;
-                default:
-            }
-        } while (op != 5);
-    }
-
-    static int crearHeroe(CCatalogoPersonajePrototipo catalogoPersonajes) {
-        Scanner t = new Scanner(System.in);
-        System.out.println("\nNombre:");
-        String nombre = t.nextLine();
-        System.out.println("Nombre imagen:");
-        String img = t.nextLine();
-        System.out.println("Peso (kg):");
-        double peso = Double.parseDouble(t.nextLine());
-        System.out.println("Altura (cm):");
-        double altura = Double.parseDouble(t.nextLine());
-        System.out.println("Inteligencia (1-10):");
-        double inteligencia = Double.parseDouble(t.nextLine());
-        String habilidad = elegirHabilidad();
-        CHeroe heroe = new CHeroe(nombre, img, peso, altura, inteligencia, habilidad);
-        catalogoPersonajes.addPersonaje("Heroe", heroe);
-        System.out.println("Heroe creado");
-        //t.next();
-        return 5;
-    }
-
-    public static int crearPrincipe(CCatalogoPersonajePrototipo catalogoPersonajes) {
-        Scanner t = new Scanner(System.in);
-        System.out.println("\nNombre:");
-        String nombre = t.nextLine();
-        System.out.println("Nombre imagen:");
-        String img = t.nextLine();
-        System.out.println("Peso (kg):");
-        double peso = Double.parseDouble(t.nextLine());
-        System.out.println("Altura (cm):");
-        double altura = Double.parseDouble(t.nextLine());
-        System.out.println("Inteligencia (1-10):");
-        double inteligencia = Double.parseDouble(t.nextLine());
-        String habilidad = elegirHabilidad();
-        CPrincipe principe = new CPrincipe(nombre, img, peso, altura, inteligencia, habilidad);
-        catalogoPersonajes.addPersonaje("Principe", principe);
-        System.out.println("Principe creado");
-        //t.next();
-        return 5;
-    }
-
-    public static int crearMonstruo(CCatalogoPersonajePrototipo catalogoPersonajes) {
-        Scanner t = new Scanner(System.in);
-        System.out.println("\nNombre:");
-        String nombre = t.nextLine();
-        System.out.println("Nombre imagen:");
-        String img = t.nextLine();
-        System.out.println("Peso (kg):");
-        double peso = Double.parseDouble(t.nextLine());
-        System.out.println("Altura (cm):");
-        double altura = Double.parseDouble(t.nextLine());
-        System.out.println("Inteligencia (1-10):");
-        double inteligencia = Double.parseDouble(t.nextLine());
-        String habilidad = elegirHabilidad();
-        CMonstruo monstruo = new CMonstruo(nombre, img, peso, altura, inteligencia, habilidad);
-        catalogoPersonajes.addPersonaje("Monstruo", monstruo);
-        System.out.println("Monstruo creado");
-        //t.next();
-        return 5;
-    }
-
-    private static int crearVillano(CCatalogoPersonajePrototipo catalogoPersonajes) {
-        Scanner t = new Scanner(System.in);
-        System.out.println("\nNombre:");
-        String nombre = t.nextLine();
-        System.out.println("Nombre imagen:");
-        String img = t.nextLine();
-        System.out.println("Peso (kg):");
-        double peso = Double.parseDouble(t.nextLine());
-        System.out.println("Altura (cm):");
-        double altura = Double.parseDouble(t.nextLine());
-        System.out.println("Inteligencia (1-10):");
-        double inteligencia = Double.parseDouble(t.nextLine());
-        String habilidad = elegirHabilidad();
-        CVillano monstruo = new CVillano(nombre, img, peso, altura, inteligencia, habilidad);
-        catalogoPersonajes.addPersonaje("Villano", monstruo);
-        System.out.println("Monstruo creado");
-        //t.next();
-        return 5;
     }
 
     public static String elegirHabilidad() {
@@ -190,16 +67,151 @@ public class MainJuego {
         return null;
     }
 
-    private static void seleccionarPersonaje(CCatalogoPersonajePrototipo catalogoPersonajes) {
-        if (catalogoPersonajes.getCatalogo().containsKey("Heroe")) {
-            System.out.println(catalogoPersonajes.getPersonaje("Heroe"));
-        }
-        if (catalogoPersonajes.getCatalogo().containsKey("Principe")) {
-            System.out.println(catalogoPersonajes.getPersonaje("Principe"));
-        }
-        if (catalogoPersonajes.getCatalogo().containsKey("Monstruo")) {
-            System.out.println(catalogoPersonajes.getPersonaje("Monstruo"));
-        }
+    private static void crearPersonajes(ArrayList[] vp) {
+        Scanner t = new Scanner(System.in);
+        int op;
+        do {
+            System.out.println("---- Creacion de personajes ---");
+            System.out.println("1. Crear Heroe\n2. Crear Monstruo\n3. Crear Principe\n4. Crear Villano\n5. Regresar");
+
+            op = t.nextInt();
+            switch (op) {
+                case 1:
+                    op = crearHeroes(vp[0]);
+                    break;
+                case 2:
+                    op = crearMonstruos(vp[1]);
+                    break;
+                case 3:
+                    op = crearPrincipes(vp[2]);
+                    break;
+                case 4:
+                    op = crearVillanos(vp[3]);
+                    break;
+                case 5:
+                    System.out.println("Regresando...");
+                    break;
+                default:
+            }
+        } while (op != 5);
+    }
+
+    private static int crearHeroes(ArrayList lh) {
+        Scanner t = new Scanner(System.in);
+        System.out.println("\nNombre:");
+        String nombre = t.nextLine();
+        System.out.println("Nombre imagen:");
+        String img = t.nextLine();
+        System.out.println("Peso (kg):");
+        double peso = Double.parseDouble(t.nextLine());
+        System.out.println("Altura (cm):");
+        double altura = Double.parseDouble(t.nextLine());
+        System.out.println("Inteligencia (1-10):");
+        double inteligencia = Double.parseDouble(t.nextLine());
+        String habilidad = elegirHabilidad();
+        CHeroe heroe = new CHeroe(nombre, img, peso, altura, inteligencia, habilidad);
+        heroe.clonar();
+        lh.add(heroe);
+        System.out.println("Heroe creado");
+        //t.next();
+        return 5;
+    }
+
+    private static int crearMonstruos(ArrayList lm) {
+        Scanner t = new Scanner(System.in);
+        System.out.println("\nNombre:");
+        String nombre = t.nextLine();
+        System.out.println("Nombre imagen:");
+        String img = t.nextLine();
+        System.out.println("Peso (kg):");
+        double peso = Double.parseDouble(t.nextLine());
+        System.out.println("Altura (cm):");
+        double altura = Double.parseDouble(t.nextLine());
+        System.out.println("Inteligencia (1-10):");
+        double inteligencia = Double.parseDouble(t.nextLine());
+        String habilidad = elegirHabilidad();
+        CMonstruo m = new CMonstruo(nombre, img, peso, altura, inteligencia, habilidad);
+        lm.add(m);
+        System.out.println("Monstruo creado");
+        //t.next();
+        return 5;
+    }
+
+    private static int crearPrincipes(ArrayList lp) {
+        Scanner t = new Scanner(System.in);
+        System.out.println("\nNombre:");
+        String nombre = t.nextLine();
+        System.out.println("Nombre imagen:");
+        String img = t.nextLine();
+        System.out.println("Peso (kg):");
+        double peso = Double.parseDouble(t.nextLine());
+        System.out.println("Altura (cm):");
+        double altura = Double.parseDouble(t.nextLine());
+        System.out.println("Inteligencia (1-10):");
+        double inteligencia = Double.parseDouble(t.nextLine());
+        String habilidad = elegirHabilidad();
+        CPrincipe p = new CPrincipe(nombre, img, peso, altura, inteligencia, habilidad);
+        lp.add(p);
+        System.out.println("Principe creado");
+        //t.next();
+        return 5;
+    }
+
+    private static int crearVillanos(ArrayList lv) {
+        Scanner t = new Scanner(System.in);
+        System.out.println("\nNombre:");
+        String nombre = t.nextLine();
+        System.out.println("Nombre imagen:");
+        String img = t.nextLine();
+        System.out.println("Peso (kg):");
+        double peso = Double.parseDouble(t.nextLine());
+        System.out.println("Altura (cm):");
+        double altura = Double.parseDouble(t.nextLine());
+        System.out.println("Inteligencia (1-10):");
+        double inteligencia = Double.parseDouble(t.nextLine());
+        String habilidad = elegirHabilidad();
+        CVillano v = new CVillano(nombre, img, peso, altura, inteligencia, habilidad);
+        lv.add(v);
+        System.out.println("Villano creado");
+        //t.next();
+        return 5;
+    }
+
+    private static void seleccionarPersonajes(ArrayList[] vp) {
+        Scanner t = new Scanner(System.in);
+        int op;
+        do {
+            System.out.println("---- Seleccion de personajes ---");
+            System.out.println("1. Seleccionar heroes\n2. Seleccionar monstruos\n3. Seleccionar principes\n4. Seleccionar villanos\n5. Regresar");
+
+            op = t.nextInt();
+            switch (op) {
+                case 1:
+                    for (int i = 0; i < vp[0].size(); i++) {
+                        System.out.println(vp[0].get(i));
+                    }
+                    break;
+                case 2:
+                    for (int i = 0; i < vp[1].size(); i++) {
+                        System.out.println(vp[1].get(i));
+                    }
+                    break;
+                case 3:
+                    for (int i = 0; i < vp[2].size(); i++) {
+                        System.out.println(vp[2].get(i));
+                    }
+                    break;
+                case 4:
+                    for (int i = 0; i < vp[3].size(); i++) {
+                        System.out.println(vp[3].get(i));
+                    }
+                    break;
+                case 5:
+                    System.out.println("Regresando...");
+                    break;
+                default:
+            }
+        } while (op != 5);
     }
 
 }

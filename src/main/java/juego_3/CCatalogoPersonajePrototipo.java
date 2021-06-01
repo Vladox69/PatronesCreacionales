@@ -39,28 +39,10 @@ public class CCatalogoPersonajePrototipo {
         vector[3] = lvillano;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj); //To change body of generated methods, choose Tools | Templates.
-    }
 
 
-    private final Hashtable<String, IPersonaje> catalogo = new Hashtable<String, IPersonaje>();
-
-    public void addPersonaje(String key, IPersonaje personaje) {
-        catalogo.put(key, personaje);
-    }
-
-    public Object getPersonaje(String key) {
-        CHeroe heroe;
-        ((CHeroe)vector[0].get(0)).clonar();
-        return catalogo.get(key).clonar();
-    }
     public ArrayList[] getVector(){
         return vector;
-    }
-    public Hashtable<String, IPersonaje> getCatalogo() {
-        return catalogo;
     }
 
 }
