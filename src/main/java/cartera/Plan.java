@@ -10,5 +10,6 @@ package cartera;
  * @author ASUS
  */
 public interface Plan {
+    void calculoPlan();
     String getDatos();
 }

@@ -15,6 +15,11 @@ public class DemoCartera {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        FabricaPlan fabrica=new FabricaPlan();
+        System.out.println(fabrica.crearPlan("DOMESTICO",5).getDatos());
+        System.out.println(fabrica.crearPlan("INSTITUCIONAL", 10).getDatos());
+        System.out.println(fabrica.crearPlan("COMERCIAL", 7).getDatos());
+        
         
         
     }
