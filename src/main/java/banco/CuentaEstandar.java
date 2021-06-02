@@ -13,6 +13,14 @@ public class CuentaEstandar implements ICuenta{
     private TarjetaDebitoEstandar tarjeta;
     private String interes;
 
+    public TarjetaDebitoEstandar getTarjeta() {
+        return tarjeta;
+    }
+
+    public void setTarjeta(TarjetaDebitoEstandar tarjeta) {
+        this.tarjeta = tarjeta;
+    }
+
     public String getInteres() {
         return interes;
     }

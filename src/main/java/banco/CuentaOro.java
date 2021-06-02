@@ -13,6 +13,30 @@ public class CuentaOro implements ICuenta{
     
     private TarjetaCreditoOro tarjetaCredito;
     private TarjetaDebitoOro tarjetaDebito;
+
+    public TarjetaCreditoOro getTarjetaCredito() {
+        return tarjetaCredito;
+    }
+
+    public void setTarjetaCredito(TarjetaCreditoOro tarjetaCredito) {
+        this.tarjetaCredito = tarjetaCredito;
+    }
+
+    public TarjetaDebitoOro getTarjetaDebito() {
+        return tarjetaDebito;
+    }
+
+    public void setTarjetaDebito(TarjetaDebitoOro tarjetaDebito) {
+        this.tarjetaDebito = tarjetaDebito;
+    }
+
+    public RegaloOro getRegalo() {
+        return regalo;
+    }
+
+    public void setRegalo(RegaloOro regalo) {
+        this.regalo = regalo;
+    }
     private RegaloOro regalo;
     private String interes;
 

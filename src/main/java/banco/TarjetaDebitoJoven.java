@@ -30,4 +30,20 @@ public class TarjetaDebitoJoven implements ITarjetaDebito{
         return "Tarjeta de debito:"+getCosto()+"\n";
     }
     
+    @Override
+    public String retirar() {
+        return "Realizando el retiro \n"+"Comprobando fondos de la cuenta \n"+"Retire su dinero \n";
+    }
+
+    @Override
+    public String ingresar() {
+        return "Realizando el ingreso \n"+"Ingrese el dinero en la ranura \n"+"Confirme la transacción \n";
+    }
+
+    @Override
+    public String pagar() {
+    return "Realizando el pago \n"+"Ingrese la clave \n";    
+    }
+
+
 }

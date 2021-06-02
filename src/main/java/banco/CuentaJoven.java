@@ -14,6 +14,22 @@ public class CuentaJoven implements ICuenta{
     private RegaloJoven regalo;
     private String interes;
 
+    public TarjetaDebitoJoven getTarjeta() {
+        return tarjeta;
+    }
+
+    public void setTarjeta(TarjetaDebitoJoven tarjeta) {
+        this.tarjeta = tarjeta;
+    }
+
+    public RegaloJoven getRegalo() {
+        return regalo;
+    }
+
+    public void setRegalo(RegaloJoven regalo) {
+        this.regalo = regalo;
+    }
+
     public String getInteres() {
         return interes;
     }

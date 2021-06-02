@@ -29,6 +29,30 @@ public class Cuenta10 implements ICuenta {
     private TrajetaCredito10 tarjetaCredito;
     private Regalo10 regalo;
 
+    public TarjetaDebito10 getTarjetaDebito() {
+        return tarjetaDebito;
+    }
+
+    public void setTarjetaDebito(TarjetaDebito10 tarjetaDebito) {
+        this.tarjetaDebito = tarjetaDebito;
+    }
+
+    public TrajetaCredito10 getTarjetaCredito() {
+        return tarjetaCredito;
+    }
+
+    public void setTarjetaCredito(TrajetaCredito10 tarjetaCredito) {
+        this.tarjetaCredito = tarjetaCredito;
+    }
+
+    public Regalo10 getRegalo() {
+        return regalo;
+    }
+
+    public void setRegalo(Regalo10 regalo) {
+        this.regalo = regalo;
+    }
+
     @Override
     public void crear() {
         tarjetaCredito = new TrajetaCredito10();

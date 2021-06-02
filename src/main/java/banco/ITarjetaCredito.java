@@ -11,4 +11,7 @@ package banco;
  */
 public interface ITarjetaCredito {
     String getDatosTarjetaCredito();
+    String retirar();
+    String ingresar();
+    String pagar();
 }
