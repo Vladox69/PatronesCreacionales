@@ -14,8 +14,17 @@ public class DEMOPatronObserver {
     /**
      * @param args the command line arguments
      */
+
     public static void main(String[] args) {
-        // TODO code application logic here
+        Editor editor = new Editor();
+        editor.events.subscribe("open", new LogOpenListener("openFile.txt"));
+        editor.events.subscribe("save", new EmailNotificationListener("admin@example.com"));
+
+        try {
+            editor.openFile("openFile.txt");
+            editor.saveFile();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
-    
 }
