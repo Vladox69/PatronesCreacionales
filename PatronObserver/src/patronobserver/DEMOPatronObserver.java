@@ -17,8 +17,11 @@ public class DEMOPatronObserver {
 
     public static void main(String[] args) {
         Editor editor = new Editor();
+        NotificacionEmail e2 = new NotificacionEmail("cynthia@example.com");
         editor.evento.subscribe("abrir", new LogRegistro("openFile.txt"));
         editor.evento.subscribe("guardar", new NotificacionEmail("admin@example.com"));
+        editor.evento.subscribe("guardar", e2);
+        editor.evento.unsubscribe("guardar", e2 );
 
         try {
             editor.openFile("openFile.txt");
