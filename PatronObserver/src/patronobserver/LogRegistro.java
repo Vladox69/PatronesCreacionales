@@ -20,6 +20,6 @@ public class LogRegistro implements IEvento {
 
     @Override
     public void actualizar(String tipoEvento, File archivo) {
-        System.out.println("Guardar para iniciar sesion " + log + ": Alguien ha realizado el evento " + tipoEvento + " con el archivo: " + archivo.getName());
+        System.out.println("Cambio registrado en " + log + ": Alguien ha realizado el evento " + tipoEvento + " con el archivo: " + archivo.getName());
     }
 }
