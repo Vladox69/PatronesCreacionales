@@ -7,7 +7,7 @@ package patronobserver;
 
 /**
  *
- * @author OppositeDragon
+ * @author bamboozle for the foozle!!!
  */
 public class DEMOPatronObserver {
 
@@ -17,8 +17,8 @@ public class DEMOPatronObserver {
 
     public static void main(String[] args) {
         Editor editor = new Editor();
-        editor.events.subscribe("open", new LogOpenListener("openFile.txt"));
-        editor.events.subscribe("save", new EmailNotificationListener("admin@example.com"));
+        editor.evento.subscribe("abrir", new LogRegistro("openFile.txt"));
+        editor.evento.subscribe("guardar", new NotificacionEmail("admin@example.com"));
 
         try {
             editor.openFile("openFile.txt");

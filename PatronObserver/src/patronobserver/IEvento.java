@@ -9,8 +9,8 @@ import java.io.File;
 
 /**
  *
- * @author OppositeDragon
+ * @author bamboozle for the foozle!!!
  */
-public interface IEventListener {
-     void update(String eventType, File file);
+public interface IEvento {
+     void actualizar(String tipoEvento, File archivo);
 }

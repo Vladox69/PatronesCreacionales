@@ -1,35 +1,35 @@
 /*
  * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
+ * To change this template archivo, choose Tools | Templates
  * and open the template in the editor.
  */
 package patronobserver;
 
 /**
  *
- * @author OppositeDragon
+ * @author bamboozle for the foozle!!!
  */
 import java.io.File;
 
 public class Editor {
 
-    public PublisherEventManager events;
-    private File file;
+    public AdminEventos evento;
+    private File archivo;
 
     public Editor() {
-        this.events = new PublisherEventManager("open", "save");
+        this.evento = new AdminEventos("abrir", "guardar");
     }
 
     public void openFile(String filePath) {
-        this.file = new File(filePath);
-        events.notify("open", file);
+        this.archivo = new File(filePath);
+        evento.notify("abrir", archivo);
     }
 
     public void saveFile() throws Exception {
-        if (this.file != null) {
-            events.notify("save", file);
+        if (this.archivo != null) {
+            evento.notify("guardar", archivo);
         } else {
-            throw new Exception("Please open a file first.");
+            throw new Exception("Primero habre un archivo ... ");
         }
     }
 }
